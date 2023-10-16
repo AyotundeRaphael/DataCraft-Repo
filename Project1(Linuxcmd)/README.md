@@ -165,31 +165,31 @@ used to create a new user account but only with root privilege mode.
 ## `apt-get`
 this command gives access to the Linux Libraries command line Advanced Package Tool (APT) tool.
 
-![Alt text](Picture34.png)
+![Alt text](Images/Picture34b.png)
 
 ## `nano, vi, jed` 
 used to manage edit file content through a text editor.
 sample of text editor environment of a file.
 
-![Alt text](Picture35.png)
+![Alt text](Images/Picture35b.png)
 
 ## `Alias, Unalias`
 used to rename or unmane file name or commands in order to create shortcut of same funtionality. 
 
-![Alt text](Picture36.png)
+![Alt text](Images/Picture36b.png)
 
 ## `su`
 used to switch user while allowing programs to run on different users
 samples of options with su commands
 
-![Alt text](Picture37.png)
+![Alt text](Images/Picture37b.png)
 
 ## `htop`
 displays an interactive program to monitor system resources and server processes in real time. 
 
-![Alt text](Picture38.png)
+![Alt text](Images/Picture38b.png)
 
 ## `ps`
 used to monitor process status of all running processes in your system.
 
-![Alt text](Picture39.png)
+![Alt text](Images/Picture39b.png)
