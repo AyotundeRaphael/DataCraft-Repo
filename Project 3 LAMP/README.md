@@ -65,6 +65,82 @@ using `sudo apt install php-mysql` command
 
 ![Alt text](Images/picture13.png)
 
-<?php
-phpinfo();
+## trying to create a Virtual Host for the Website using Apache ## 
+creating a directory called `projectlamp` by using the `mkdir` command in 
+`sudo mkdir /var/www/projectlamp` and changing the ownership by assigning ownership to `$USER`by using this command
+`sudo chown -R $USER:$USER /var/www/projectlamp`
+then open the configuration file in Apache named `sites-available` with this command `sudo vi /etc/apache2/sites-available/projectlamp.conf`
+
+![Alt text](Images/Picture14.png)
+
+then inside the blank file that opens copy this code 
+`<VirtualHost *:80>
+    ServerName projectlamp
+    ServerAlias www.projectlamp 
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/projectlamp
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>`
+
+![Alt text](Images/Picture15.png)
+
+## To display the php page we need to:
+disable 000-default and enable projectlamp by the following commands: ##
+  `sudo a2dissite 000-default`
+  `sudo a2ensite projectlamp`
+  `sudo apache2ctl configtest`
+  `sudo systemctl reload apache2`
+
+![Alt text](Images/Picture16.png) 
+
+## To enable the PHP on the website we do the following:##
+* give `index.php` the priority over `index.html`
+using the following commands/codes.
+`sudo vim /etc/apache2/mods-enabled/dir.conf`
+`<IfModule mod_dir.c>
+        #Change this:
+        #DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+        #To this:
+        `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`
+</IfModule>`
+
+then create index.php in the projectlamp using:  
+`sudo vim /var/www/projectlamp/index.php`
+
+then insert this code into index.php file
+
+` <?php
+phpinfo();`
+
+refresh on the broswer address bar with the public IP of the instance to display the php page below
+
+![Alt text](Images/Picture17.png)
+
+To disable this page use `rm`command in 
+`sudo rm /var/www/projectlamp/index.php`
+
+then refresh again to have. 
+
+![Alt text](Images/Picture18.png)
+
+thank you 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
